@@ -1,5 +1,7 @@
+import AppLineChart from "@/components/AppLineChart";
 import CardList from "@/components/CardList";
 import EditUser from "@/components/EditUser";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
@@ -147,9 +149,36 @@ const UserDetailPage = () => {
         {/* RIGHT */}
         <div className="w-full xl:w-2/3 space-y-6">
           {/* USER CARD CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg">User Card</div>
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-4">
+            <div className="flex items-center gap-2">
+              <Avatar className="cursor-pointer">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <h1 className="text-xl font-semibold">Quang Tuan</h1>
+            </div>
+            <p className="text-md text-muted-foreground">
+              Backend Developer with over 3 years of experience specializing in
+              building and optimizing large-scale e-commerce and marketplace
+              platforms. Proven track record in delivering high-performance
+              APIs, improving system scalability, and ensuring smooth operations
+              across international markets, including Japan, Vietnam, and
+              Thailand. Strong expertise in NestJS, Node.js, MySQL, MongoDB,
+              AWS, and React/Next.js, with hands-on experience in microservices
+              architecture, real-time communication, and cloud infrastructure.
+              Skilled in code review, technical discussions, and leading small
+              development teams to deliver complex features efficiently.
+              Recognized for a proactive approach to performance optimization,
+              cross-functional collaboration, and the ability to bridge backend
+              and frontend development — with a clear goal of advancing toward
+              Fullstack and Project Management roles.
+            </p>
+          </div>
           {/* CHART CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg">Chart</div>
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <h1 className="text-xl font-semibold">User Activities</h1>
+            <AppLineChart />
+          </div>
         </div>
       </div>
     </div>
