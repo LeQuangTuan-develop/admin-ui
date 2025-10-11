@@ -11,7 +11,7 @@ export default function Home() {
         <AppBarChart />
       </div>
       <div className="bg-primary-foreground p-4 rounded-lg">
-        <CardList title="Popular Content" />
+        <CardList title="Latest transactions" />
       </div>
       <div className="bg-primary-foreground p-4 rounded-lg">
         <ChartPieDonutText />
@@ -23,7 +23,7 @@ export default function Home() {
         <ChartAreaLegend />
       </div>
       <div className="bg-primary-foreground p-4 rounded-lg">
-        <CardList title="Lastest transactions" />
+        <CardList title="Popular Products" />
       </div>
     </div>
   );

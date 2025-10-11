@@ -1,8 +1,6 @@
 import AppLineChart from "@/components/AppLineChart";
-import CardList from "@/components/CardList";
 import EditUser from "@/components/EditUser";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -103,51 +101,6 @@ const UserDetailPage = () => {
               </HoverCard>
             </div>
           </div>
-          {/* INFORMATION CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg">
-            <div className="flex items-center justify-between">
-              <h1 className="text-xl font-semibold">User Information</h1>
-              <EditUser />
-            </div>
-            <div className="space-y-4 mt-4">
-              <div className="flex flex-col gap-2 mb-8">
-                <p className="text-sm text-muted-foreground">
-                  Profile completion
-                </p>
-                <Progress value={66} />
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Username:</span>
-                <span>Quang Tuan</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Email:</span>
-                <span>lequangtuan1605@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Phone:</span>
-                <span>0867608830</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Location:</span>
-                <span>Thu Duc city, Ho Chi Minh city</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Role:</span>
-                <Badge>Admin</Badge>
-              </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                Joined on 2025.01.01
-              </p>
-            </div>
-          </div>
-          {/* CARD LIST CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg">
-            <CardList title="Recent Transactions" />
-          </div>
-        </div>
-        {/* RIGHT */}
-        <div className="w-full xl:w-2/3 space-y-6">
           {/* USER CARD CONTAINER */}
           <div className="bg-primary-foreground p-4 rounded-lg space-y-4">
             <div className="flex items-center gap-2">
@@ -174,6 +127,47 @@ const UserDetailPage = () => {
               Fullstack and Project Management roles.
             </p>
           </div>
+          {/* INFORMATION CONTAINER */}
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <div className="flex items-center justify-between">
+              <h1 className="text-xl font-semibold">User Information</h1>
+              <EditUser />
+            </div>
+            <div className="space-y-4 mt-4">
+              <div className="flex flex-col gap-2 mb-8">
+                <p className="text-sm text-muted-foreground">
+                  Profile completion
+                </p>
+                <Progress value={66} />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Full name:</span>
+                <span>Le Quang Tuan</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Email:</span>
+                <span>lequangtuan1605@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Phone:</span>
+                <span>0867608830</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Address:</span>
+                <span>28 duong 5 Thu Duc city</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">City:</span>
+                <span>Ho Chi Minh</span>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                Joined on 2025.01.01
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* RIGHT */}
+        <div className="w-full xl:w-2/3 space-y-6">
           {/* CHART CONTAINER */}
           <div className="bg-primary-foreground p-4 rounded-lg">
             <h1 className="text-xl font-semibold">User Activities</h1>
