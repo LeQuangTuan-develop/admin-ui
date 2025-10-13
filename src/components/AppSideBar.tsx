@@ -11,22 +11,20 @@ import {
   SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
 
 import {
   Calendar,
-  ChevronDown,
   ChevronUp,
   Home,
   Inbox,
   Plus,
-  Projector,
   Search,
   Settings,
+  Shirt,
+  ShoppingBasket,
+  User,
   User2,
 } from "lucide-react";
 import Image from "next/image";
@@ -37,11 +35,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "./ui/collapsible";
+import { Sheet, SheetTrigger } from "./ui/sheet";
+import AddProduct from "./AddProduct";
+import AddCategory from "./AddCategory";
+import AddOrder from "./AddOrder";
+import AddUser from "./AddUser";
 
 const items = [
   {
@@ -109,16 +107,16 @@ const AppSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>Projects</SidebarGroupLabel>
+          <SidebarGroupLabel>Products</SidebarGroupLabel>
           <SidebarGroupAction>
-            <Plus /> <span className="sr-only">Add Project</span>
+            <Plus /> <span className="sr-only">Add Product</span>
           </SidebarGroupAction>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="#">
-                    <Projector />
+                  <Link href="/products">
+                    <Shirt />
                     <span>See all</span>
                   </Link>
                 </SidebarMenuButton>
@@ -126,18 +124,104 @@ const AppSidebar = () => {
             </SidebarMenu>
             <SidebarMenu>
               <SidebarMenuItem>
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <SidebarMenuButton asChild>
+                      <Link href="#">
+                        <Plus />
+                        <span>Add product</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SheetTrigger>
+                  <AddProduct />
+                </Sheet>
+              </SidebarMenuItem>
+            </SidebarMenu>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <SidebarMenuButton asChild>
+                      <Link href="#">
+                        <Plus />
+                        <span>Add category</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SheetTrigger>
+                  <AddCategory />
+                </Sheet>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Users</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Plus /> <span className="sr-only">Add User</span>
+          </SidebarGroupAction>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="#">
-                    <Plus />
-                    <span>Add project</span>
+                  <Link href="/users">
+                    <User />
+                    <span>See all</span>
                   </Link>
                 </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <SidebarMenuButton asChild>
+                      <Link href="#">
+                        <Plus />
+                        <span>Add User</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SheetTrigger>
+                  <AddUser />
+                </Sheet>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Payments</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Plus /> <span className="sr-only">Add Transaction</span>
+          </SidebarGroupAction>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/users">
+                    <ShoppingBasket />
+                    <span>See all</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <SidebarMenuButton asChild>
+                      <Link href="#">
+                        <Plus />
+                        <span>Add Order</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SheetTrigger>
+                  <AddOrder />
+                </Sheet>
               </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
         {/* Collapsible */}
-        <Collapsible defaultOpen className="group/collapsible">
+        {/* <Collapsible defaultOpen className="group/collapsible">
           <SidebarGroup>
             <CollapsibleTrigger asChild>
               <SidebarGroupLabel>
@@ -170,9 +254,9 @@ const AppSidebar = () => {
               </SidebarGroupContent>
             </CollapsibleContent>
           </SidebarGroup>
-        </Collapsible>
+        </Collapsible> */}
         {/* Nested */}
-        <SidebarGroup>
+        {/* <SidebarGroup>
           <SidebarGroupLabel>Sidebar sub</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -204,7 +288,7 @@ const AppSidebar = () => {
               </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
-        </SidebarGroup>
+        </SidebarGroup> */}
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
